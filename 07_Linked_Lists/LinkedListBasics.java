@@ -1,4 +1,4 @@
-// Node class (Dabba jisme data aur next pointer hota hai)
+
 class Node {
     int data;
     Node next;
