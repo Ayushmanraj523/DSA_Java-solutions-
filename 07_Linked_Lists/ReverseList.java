@@ -1,4 +1,4 @@
-// 1. Node Class (Ye missing tha!)
+// Node Class
 class Node {
     int data;
     Node next;
@@ -9,11 +9,11 @@ class Node {
     }
 }
 
-// 2. Helper Class (Reverse Logic)
+// Linked List Operations Class
 class ReverseLinkedList {
     Node head;
     
-    // Insert function
+    // Function to insert data
     void insert(int data) {
         Node newNode = new Node(data);
         if (head == null) {
@@ -27,22 +27,22 @@ class ReverseLinkedList {
         last.next = newNode;
     }
     
-    // --- MAIN LOGIC: Reverse Function ---
+    // Function to reverse the list
     void reverse() {
         Node prev = null;
         Node current = head;
         Node next = null;
         
         while (current != null) {
-            next = current.next; // 1. Agla node pakad ke rakho
-            current.next = prev; // 2. Current ka teer (pointer) piche ghuma do
-            prev = current;      // 3. Prev ko aage badhao
-            current = next;      // 4. Current ko aage badhao
+            next = current.next; // Store next node
+            current.next = prev; // Reverse current node's pointer
+            prev = current;      // Move prev one step forward
+            current = next;      // Move current one step forward
         }
-        head = prev; // Last node ab naya head ban gaya
+        head = prev; // Update head to the last node
     }
     
-    // Print function
+    // Function to print the list
     void printList() {
         Node temp = head;
         while (temp != null) {
@@ -53,12 +53,12 @@ class ReverseLinkedList {
     }
 }
 
-// 3. Main Class
+// Main Class
 public class ReverseList {
     public static void main(String[] args) {
         ReverseLinkedList list = new ReverseLinkedList();
         
-        // Create list: 1 -> 2 -> 3 -> 4 -> 5
+        // Create list
         list.insert(1);
         list.insert(2);
         list.insert(3);
@@ -72,12 +72,6 @@ public class ReverseList {
         list.reverse();
         
         System.out.println("Reversed list:");
-        list.printList();
-        
-        System.out.println("\nReversing again (Back to original)...");
-        list.reverse();
-        
-        System.out.println("Restored list:");
         list.printList();
     }
 }
