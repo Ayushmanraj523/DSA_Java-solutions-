@@ -1,4 +1,4 @@
-// 1. Node Class
+
 class Node {
     int data;
     Node next;
